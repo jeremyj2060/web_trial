@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ activeTab: 'Appetizers' }">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rita's Bar & Grill Menu</title>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <header class="bg-black text-white py-6 text-center">
+    <h1 class="text-3xl font-bold">Rita's Bar & Grill</h1>
+    <p>Lake Bluff, Illinois</p>
+  </header>
+
+  <!-- Menu Section -->
+  <section class="py-12 px-4 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-semibold text-center mb-8">Menu</h2>
+
+    <!-- Tabs -->
+    <div class="flex justify-center flex-wrap gap-4 mb-8">
+      <template x-for="tab in ['Appetizers', 'Entrees', 'Sandwiches', 'Drinks', 'Desserts']">
+        <button
+          @click="activeTab = tab"
+          x-text="tab"
+          :class="activeTab === tab ? 'bg-black text-white' : 'bg-white text-black border'"
+          class="px-4 py-2 rounded-full shadow-md transition"
+        ></button>
+      </template>
+    </div>
+
+    <!-- Content Panels -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Appetizers -->
+      <div x-show="activeTab === 'Appetizers'" class="space-y-4">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-xl font-bold">Mozzarella Sticks</h3>
+          <p class="text-sm">Crispy, golden and served with marinara.</p>
+          <p class="font-semibold mt-1">$7.99</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-xl font-bold">Buffalo Wings</h3>
+          <p class="text-sm">Tossed in your choice of mild, hot, or BBQ sauce.</p>
+          <p class="font-semibold mt-1">$9.99</p>
+        </div>
+      </div>
+
+      <!-- Entrees -->
+      <div x-show="activeTab === 'Entrees'" class="space-y-4">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-xl font-bold">Ribeye Steak</h3>
+          <p class="text-sm">12oz grilled to order with two sides.</p>
+          <p class="font-semibold mt-1">$22.99</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-xl font-bold">Grilled Salmon</h3>
+          <p class="text-sm">Served with lemon butter and wild rice.</p>
+          <p class="font-semibold mt-1">$18.99</p>
+        </div>
+      </div>
+
+      <!-- Sandwiches -->
+      <div x-show="activeTab === 'Sandwiches'" class="space-y-4">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-xl font-bold">Classic Burger</h3>
+          <p class="text-sm">Angus beef with lettuce, tomato, and fries.</p>
+          <p class="font-semibold mt-1">$11.99</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-xl font-bold">Grilled Chicken Sandwich</h3>
+          <p class="text-sm">Topped with bacon and swiss cheese.</p>
+          <p class="font-semibold mt-1">$10.99</p>
+        </div>
+      </div>
+
+      <!-- Drinks -->
+      <div x-show="activeTab === 'Drinks'" class="space-y-4">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-xl font-bold">Craft Beer Selection</h3>
+          <p class="text-sm">Ask about today’s local drafts.</p>
+          <p class="font-semibold mt-1">$5.50</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-xl font-bold">Rita's Margarita</h3>
+          <p class="text-sm">Signature tequila blend with lime.</p>
+          <p class="font-semibold mt-1">$7.00</p>
+        </div>
+      </div>
+
+      <!-- Desserts -->
+      <div x-show="activeTab === 'Desserts'" class="space-y-4">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-xl font-bold">Chocolate Lava Cake</h3>
+          <p class="text-sm">Served warm with vanilla ice cream.</p>
+          <p class="font-semibold mt-1">$6.50</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-xl font-bold">Cheesecake</h3>
+          <p class="text-sm">Classic New York-style with berry topping.</p>
+          <p class="font-semibold mt-1">$5.99</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-black text-white py-6 text-center">
+    <p>&copy; 2025 Rita's Bar & Grill. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
