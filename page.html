@@ -1,233 +1,85 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ activeTab: 'Appetizers' }">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rita's Bar & Grill | Menu</title>
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js" defer></script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rita's Bar & Grill</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header { background: #003366; color: white; padding: 20px; text-align: center; }
+    nav { background: #005599; text-align: center; padding: 10px; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    section { padding: 20px; max-width: 900px; margin: auto; }
+    h2 { color: #003366; }
+    footer { background: #003366; color: white; text-align: center; padding: 20px; margin-top: 30px; }
+    .menu-item { margin-bottom: 10px; }
+    .icon-link { color: white; margin-left: 10px; }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
-  <!-- Header -->
-  <header class="bg-black text-white py-6 text-center">
-    <h1 class="text-3xl font-bold">Rita's Bar & Grill</h1>
-    <p>Lake Bluff, Illinois</p>
+<body>
+  <header>
+    <h1>Rita's Bar & Grill</h1>
+    <p>13744 Rockland Rd, Lake Bluff, IL 60044</p>
   </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#hours">Hours</a>
+    <a href="#reservations">Reservations</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <!-- Main Menu Section -->
-  <main class="py-12 px-4 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-8">Our Menu</h2>
+  <section id="about">
+    <h2>About</h2>
+    <p>Welcome to Rita’s Bar & Grill — a hidden gem nestled in the heart of Lake Bluff, Illinois. Located at 13744 Rockland Road, just minutes from Waukegan, Rita’s has been a beloved neighborhood spot for decades. Housed in a charming late 19th-century building, our restaurant offers a cozy, home-style atmosphere where everyone feels like family.</p>
+    <p>At Rita’s, we serve up hearty American comfort food made from scratch. Our menu features classics like juicy burgers, tender steaks, sandwiches, and our signature barbecue ribs. A community favorite is our fish fry, available Wednesdays, Fridays, and Saturdays, featuring fresh, perfectly prepared perch.</p>
+    <p>Whether you’re grabbing a drink with friends at the bar or enjoying a laid-back meal in our dining room, you’ll experience the warmth and welcoming spirit that makes Rita’s feel like home. Our friendly staff, lively vibe, and consistently delicious food have earned us a loyal following throughout the Lake Bluff and Waukegan communities.</p>
+    <p>Come hungry, leave happy — that’s the Rita’s way.</p>
+  </section>
 
-    <!-- Tabs -->
-    <div class="flex justify-center flex-wrap gap-4 mb-10">
-      <template x-for="tab in ['Appetizers', 'Salads', 'Sandwiches', 'Entrees', 'Drinks', 'Desserts']">
-        <button
-          @click="activeTab = tab"
-          x-text="tab"
-          :class="activeTab === tab ? 'bg-black text-white' : 'bg-white text-black border'"
-          class="px-4 py-2 rounded-full shadow transition"
-        ></button>
-      </template>
-    </div>
+  <section id="menu">
+    <h2>Menu</h2>
+    <p>See images above for full menu details including:</p>
+    <ul>
+      <li>Appetizers – Chicken Strips, Mozzarella Sticks, Wings</li>
+      <li>Salads – Julienne Salad, Tuna Salad, Grilled Chicken Salad</li>
+      <li>Soups – Chili, Clam Chowder, Soup of the Day</li>
+      <li>Extras – Cheese, Grilled Onions, Mushrooms, Cottage Cheese</li>
+      <li>Desserts – Xango</li>
+      <li>Burgers & Sandwiches – Bacon Burger, Mushroom Burger, BLT, Patty Melt</li>
+      <li>Dinners – Fish Fry, Sirloin, BBQ Pork, Fried Chicken</li>
+      <li>Daily Specials – Monday through Saturday listed</li>
+    </ul>
+  </section>
 
-    <!-- Menu Items -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
-      <!-- Appetizers -->
-      <template x-if="activeTab === 'Appetizers'">
-        <div class="space-y-6">
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2016/03/05/21/04/mozzarella-sticks-1239249_1280.jpg" alt="Mozzarella Sticks" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Mozzarella Sticks</h3>
-              <p>Served with marinara sauce.</p>
-              <p class="font-semibold mt-1">$7.95</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2017/06/02/18/24/chicken-wings-2364061_1280.jpg" alt="Chicken Wings" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Chicken Wings</h3>
-              <p>Buffalo or BBQ sauce.</p>
-              <p class="font-semibold mt-1">$10.95</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2020/07/13/14/27/nachos-5401463_1280.jpg" alt="Nachos Supreme" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Nachos Supreme</h3>
-              <p>Cheese, jalapeños, beef & beans.</p>
-              <p class="font-semibold mt-1">$9.95</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2017/02/11/11/22/onion-rings-2053326_1280.jpg" alt="Onion Rings" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Onion Rings</h3>
-              <p>Crispy and golden brown.</p>
-              <p class="font-semibold mt-1">$6.95</p>
-            </div>
-          </div>
-        </div>
-      </template>
+  <section id="hours">
+    <h2>Hours</h2>
+    <p><strong>🕒 Hours of Operation</strong></p>
+    <ul>
+      <li>Monday – Thursday: 11:00 AM – 12:00 AM</li>
+      <li>Friday – Saturday: 11:00 AM – 2:00 AM</li>
+      <li>Sunday: 11:00 AM – 1:00 AM</li>
+    </ul>
+  </section>
 
-      <!-- Salads -->
-      <template x-if="activeTab === 'Salads'">
-        <div class="space-y-6">
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2017/07/16/10/43/salad-2508939_1280.jpg" alt="House Salad" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">House Salad</h3>
-              <p>Mixed greens, tomato, cucumber.</p>
-              <p class="font-semibold mt-1">$6.95</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2018/06/27/14/50/caesar-salad-3508897_1280.jpg" alt="Caesar Salad" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Caesar Salad</h3>
-              <p>Romaine, croutons, parmesan.</p>
-              <p class="font-semibold mt-1">$7.95</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2016/03/05/21/01/salad-1239247_1280.jpg" alt="Grilled Chicken Salad" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Grilled Chicken Salad</h3>
-              <p>Chicken over fresh greens.</p>
-              <p class="font-semibold mt-1">$9.95</p>
-            </div>
-          </div>
-        </div>
-      </template>
+  <section id="reservations">
+    <h2>Reservations</h2>
+    <p>To make a reservation, please call us at <strong>(847) 362-0157</strong>.</p>
+  </section>
 
-      <!-- Sandwiches -->
-      <template x-if="activeTab === 'Sandwiches'">
-        <div class="space-y-6">
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg" alt="Classic Burger" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Classic Burger</h3>
-              <p>Angus beef, lettuce, tomato, onion.</p>
-              <p class="font-semibold mt-1">$10.95</p>
-            </div>
-          </div>
-        </div>
-      </template>
+  <section id="contact">
+    <h2>Contact & Socials</h2>
+    <p>Phone: (847) 362-0157</p>
+    <p>Follow us on Facebook:
+      <a class="icon-link" href="https://www.facebook.com/p/Ritas-100063722705743/" target="_blank">
+        <i class="fab fa-facebook-square fa-lg"></i>
+      </a>
+    </p>
+  </section>
 
-      <!-- Entrees -->
-      <template x-if="activeTab === 'Entrees'">
-        <div class="space-y-6">
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2020/11/01/17/12/ribeye-5706224_1280.jpg" alt="Ribeye Steak" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Ribeye Steak</h3>
-              <p>12oz grilled to order with two sides.</p>
-              <p class="font-semibold mt-1">$21.95</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2016/04/23/21/31/salmon-1353590_1280.jpg" alt="Grilled Salmon" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Grilled Salmon</h3>
-              <p>Served with lemon butter and wild rice.</p>
-              <p class="font-semibold mt-1">$18.95</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2022/07/11/18/55/pasta-7315196_1280.jpg" alt="Chicken Alfredo" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Chicken Alfredo</h3>
-              <p>Creamy Alfredo pasta with grilled chicken.</p>
-              <p class="font-semibold mt-1">$16.95</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2016/03/05/20/07/ribs-1239248_1280.jpg" alt="BBQ Ribs" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">BBQ Ribs (Half Rack)</h3>
-              <p>Slow-cooked and smothered in BBQ sauce.</p>
-              <p class="font-semibold mt-1">$17.95</p>
-            </div>
-          </div>
-        </div>
-      </template>
-
-      <!-- Drinks -->
-      <template x-if="activeTab === 'Drinks'">
-        <div class="space-y-6">
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2015/09/02/12/45/cola-918926_1280.jpg" alt="Soft Drinks" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Soft Drinks</h3>
-              <p>Coke, Diet Coke, Sprite and more.</p>
-              <p class="font-semibold mt-1">$2.50</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2015/06/24/16/36/coffee-820220_1280.jpg" alt="Coffee / Tea" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Coffee / Tea</h3>
-              <p>Fresh brewed, any time of day.</p>
-              <p class="font-semibold mt-1">$2.00</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2016/03/27/20/57/beer-1282203_1280.jpg" alt="Domestic Beer" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Domestic Beer</h3>
-              <p>Bud Light, Miller Lite, Coors and more.</p>
-              <p class="font-semibold mt-1">$4.00</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2020/02/03/15/56/wine-4817428_1280.jpg" alt="Imported Beer" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Imported Beer</h3>
-              <p>Heineken, Guinness, Stella Artois.</p>
-              <p class="font-semibold mt-1">$5.00</p>
-            </div>
-          </div>
-        </div>
-      </template>
-
-      <!-- Desserts -->
-      <template x-if="activeTab === 'Desserts'">
-        <div class="space-y-6">
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2020/12/28/10/46/chocolate-cake-5863845_1280.jpg" alt="Chocolate Cake" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Chocolate Cake</h3>
-              <p>Rich and fudgy with chocolate ganache.</p>
-              <p class="font-semibold mt-1">$5.95</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/cheesecake-1867399_1280.jpg" alt="Cheesecake" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Cheesecake</h3>
-              <p>Classic NY-style with berry topping.</p>
-              <p class="font-semibold mt-1">$6.25</p>
-            </div>
-          </div>
-          <div class="bg-white rounded shadow overflow-hidden">
-            <img src="https://cdn.pixabay.com/photo/2022/05/18/15/13/ice-cream-7204295_1280.jpg" alt="Ice Cream" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-bold">Ice Cream</h3>
-              <p>Vanilla, chocolate, or strawberry.</p>
-              <p class="font-semibold mt-1">$3.95</p>
-            </div>
-          </div>
-        </div>
-      </template>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-black text-white py-6 text-center">
+  <footer>
     <p>&copy; 2025 Rita's Bar & Grill. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
