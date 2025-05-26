@@ -29,83 +29,92 @@
       </template>
     </div>
 
-    <!-- Menu Sections -->
+    <!-- Menu Section Template -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-      <!-- Appetizers -->
+      <!-- Example Category: Appetizers -->
       <template x-if="activeTab === 'Appetizers'">
-        <div class="space-y-4">
-          <div class="menu-item" x-data>
-            <h3 class="text-xl font-bold">Mozzarella Sticks</h3>
-            <p class="text-sm">Served with marinara sauce.</p>
-            <p class="font-semibold">$7.95</p>
+        <div class="space-y-6">
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/600x400/?mozzarella" alt="Mozzarella Sticks" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-bold">Mozzarella Sticks</h3>
+              <p>Served with marinara sauce.</p>
+              <p class="font-semibold mt-1">$7.95</p>
+            </div>
           </div>
-          <div class="menu-item">
-            <h3 class="text-xl font-bold">Chicken Wings</h3>
-            <p class="text-sm">Buffalo or BBQ.</p>
-            <p class="font-semibold">$10.95</p>
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/600x400/?chicken-wings" alt="Chicken Wings" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-bold">Chicken Wings</h3>
+              <p>Buffalo or BBQ sauce.</p>
+              <p class="font-semibold mt-1">$10.95</p>
+            </div>
           </div>
-          <div class="menu-item">
-            <h3 class="text-xl font-bold">Nachos Supreme</h3>
-            <p class="text-sm">Topped with cheese, jalapeños, and more.</p>
-            <p class="font-semibold">$9.95</p>
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/600x400/?nachos" alt="Nachos Supreme" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-bold">Nachos Supreme</h3>
+              <p>Cheese, jalapeños, beef & beans.</p>
+              <p class="font-semibold mt-1">$9.95</p>
+            </div>
           </div>
-          <div class="menu-item">
-            <h3 class="text-xl font-bold">Onion Rings</h3>
-            <p class="text-sm">Crispy and golden.</p>
-            <p class="font-semibold">$6.95</p>
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/600x400/?onion-rings" alt="Onion Rings" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-bold">Onion Rings</h3>
+              <p>Crispy, golden brown.</p>
+              <p class="font-semibold mt-1">$6.95</p>
+            </div>
           </div>
         </div>
       </template>
 
-      <!-- Salads -->
+      <!-- Repeat the pattern for each category -->
       <template x-if="activeTab === 'Salads'">
-        <div class="space-y-4">
-          <div class="menu-item"><h3 class="text-xl font-bold">House Salad</h3><p class="font-semibold">$6.95</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">Caesar Salad</h3><p class="font-semibold">$7.95</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">Grilled Chicken Salad</h3><p class="font-semibold">$9.95</p></div>
+        <div class="space-y-6">
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/600x400/?salad" alt="House Salad" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-bold">House Salad</h3>
+              <p>Mixed greens, tomato, cucumber.</p>
+              <p class="font-semibold mt-1">$6.95</p>
+            </div>
+          </div>
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/600x400/?caesar-salad" alt="Caesar Salad" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-bold">Caesar Salad</h3>
+              <p>Romaine, croutons, parmesan.</p>
+              <p class="font-semibold mt-1">$7.95</p>
+            </div>
+          </div>
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/600x400/?grilled-chicken-salad" alt="Grilled Chicken Salad" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-bold">Grilled Chicken Salad</h3>
+              <p>Chicken over fresh greens.</p>
+              <p class="font-semibold mt-1">$9.95</p>
+            </div>
+          </div>
         </div>
       </template>
 
-      <!-- Sandwiches -->
+      <!-- Follow the same pattern for Sandwiches, Entrees, Drinks, Desserts... -->
+
+      <!-- Example: One Sandwich -->
       <template x-if="activeTab === 'Sandwiches'">
-        <div class="space-y-4">
-          <div class="menu-item"><h3 class="text-xl font-bold">Classic Burger</h3><p class="font-semibold">$10.95</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">Patty Melt</h3><p class="font-semibold">$11.45</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">Grilled Chicken Sandwich</h3><p class="font-semibold">$10.75</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">BLT</h3><p class="font-semibold">$8.95</p></div>
+        <div class="space-y-6">
+          <div class="bg-white rounded shadow overflow-hidden">
+            <img src="https://source.unsplash.com/600x400/?burger" alt="Classic Burger" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-bold">Classic Burger</h3>
+              <p>Angus beef, lettuce, tomato, onion.</p>
+              <p class="font-semibold mt-1">$10.95</p>
+            </div>
+          </div>
+          <!-- Add more sandwiches here... -->
         </div>
       </template>
-
-      <!-- Entrees -->
-      <template x-if="activeTab === 'Entrees'">
-        <div class="space-y-4">
-          <div class="menu-item"><h3 class="text-xl font-bold">Ribeye Steak</h3><p class="font-semibold">$21.95</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">Grilled Salmon</h3><p class="font-semibold">$18.95</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">Chicken Alfredo</h3><p class="font-semibold">$16.95</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">BBQ Ribs (Half Rack)</h3><p class="font-semibold">$17.95</p></div>
-        </div>
-      </template>
-
-      <!-- Drinks -->
-      <template x-if="activeTab === 'Drinks'">
-        <div class="space-y-4">
-          <div class="menu-item"><h3 class="text-xl font-bold">Soft Drinks</h3><p class="font-semibold">$2.50</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">Coffee / Tea</h3><p class="font-semibold">$2.00</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">Domestic Beer</h3><p class="font-semibold">$4.00</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">Imported Beer</h3><p class="font-semibold">$5.00</p></div>
-        </div>
-      </template>
-
-      <!-- Desserts -->
-      <template x-if="activeTab === 'Desserts'">
-        <div class="space-y-4">
-          <div class="menu-item"><h3 class="text-xl font-bold">Chocolate Cake</h3><p class="font-semibold">$5.95</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">Cheesecake</h3><p class="font-semibold">$6.25</p></div>
-          <div class="menu-item"><h3 class="text-xl font-bold">Ice Cream</h3><p class="font-semibold">$3.95</p></div>
-        </div>
-      </template>
-
     </div>
   </main>
 
